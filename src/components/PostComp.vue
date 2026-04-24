@@ -29,20 +29,24 @@
   <div class="result" v-if="employees.length > 0">
     <h3>Inserted Data</h3>
     <table>
-      <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Salary</th>
-        <th>Designation</th>
-        <th>Department</th>
-      </tr>
-      <tr v-for="employee in employees" :key="employee.id">
-        <td>{{ employee.id }}</td>
-        <td>{{ employee.name }}</td>
-        <td>{{ employee.salary }}</td>
-        <td>{{ employee.designation }}</td>
-        <td>{{ employee.department }}</td>
-      </tr>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Salary</th>
+          <th>Designation</th>
+          <th>Department</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="employee in employees" :key="employee.id">
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.salary }}</td>
+          <td>{{ employee.designation }}</td>
+          <td>{{ employee.department }}</td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </template>

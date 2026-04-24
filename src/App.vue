@@ -1,31 +1,29 @@
 <template>
-  <div>
+  <div id="app">
     <NavBar />
-    <router-view />
+    <main class="router-panel">
+      <router-view />
+    </main>
   </div>
   <!-- <PostComp/> -->
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-// import PostComp from './components/PostComp.vue';
-import NavBar from './components/NavBar.vue';
+import NavBar from "./components/NavBar.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    NavBar
-  }
-}
+    NavBar,
+  },
+};
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Manrope", "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 10px;
+  min-height: 100vh;
 }
 </style>
