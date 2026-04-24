@@ -75,7 +75,7 @@ export default {
 }
 
 .overview-card {
-  background: rgba(6, 19, 37, 0.45);
+  background: rgba(15, 54, 109, 0.45);
   border: 1px solid rgba(0, 209, 255, 0.18);
   border-radius: 12px;
   padding: 1rem;

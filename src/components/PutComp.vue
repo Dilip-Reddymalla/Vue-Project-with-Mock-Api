@@ -1,6 +1,8 @@
 <template>
-  <div class="container">
-    <table>
+  <div class="card theme-card mt-3">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-hover align-middle theme-table mb-0">
       <thead>
         <tr>
           <th>Id</th>
@@ -18,42 +20,65 @@
           <td>{{ employee.designation }}</td>
           <td>{{ employee.department }}</td>
           <td>
-            <button @click="editEmp(employee)">Edit</button>
+            <button class="btn btn-theme btn-sm" @click="editEmp(employee)">
+              Edit
+            </button>
           </td>
         </tr>
       </tbody>
-    </table>
-    <div class="editModel" v-if="newData.id">
-      <H3>Edit the empoylee details </H3>
-      Name:
-      <input
-        type="text"
-        placeholder="Enter Employee Name"
-        v-model="this.newData.name"
-      />
-      <br /><br />
-      salary:
-      <input
-        type="number"
-        placeholder="Enter Employee Salary"
-        v-model="this.newData.salary"
-      />
-      <br /><br />
-      designation:
-      <input
-        type="text"
-        placeholder="Enter Employee designation"
-        v-model="this.newData.designation"
-      />
-      <br /><br />
-      department:
-      <input
-        type="text"
-        placeholder="Enter Employee department"
-        v-model="this.newData.department"
-      />
-      <br /><br />
-      <button @click="UpdateData">Update Details</button>
+        </table>
+      </div>
+
+      <div id="editModel" class="card theme-card-sub mt-4" v-if="newData.id">
+        <div class="card-body">
+          <h3 class="h5 mb-3">Edit Employee Details</h3>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label" for="edit-name">Name</label>
+              <input
+                id="edit-name"
+                type="text"
+                class="form-control theme-input"
+                placeholder="Enter Employee Name"
+                v-model="newData.name"
+              />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="edit-salary">Salary</label>
+              <input
+                id="edit-salary"
+                type="number"
+                class="form-control theme-input"
+                placeholder="Enter Employee Salary"
+                v-model="newData.salary"
+              />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="edit-designation">Designation</label>
+              <input
+                id="edit-designation"
+                type="text"
+                class="form-control theme-input"
+                placeholder="Enter Employee Designation"
+                v-model="newData.designation"
+              />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="edit-department">Department</label>
+              <input
+                id="edit-department"
+                type="text"
+                class="form-control theme-input"
+                placeholder="Enter Employee Department"
+                v-model="newData.department"
+              />
+            </div>
+          </div>
+          <button class="btn btn-theme mt-3" @click="UpdateData">
+            Update Details
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -90,6 +115,13 @@ export default {
       this.newData.salary = emp.salary;
       this.newData.designation = emp.designation;
       this.newData.department = emp.department;
+
+      this.$nextTick(() => {
+        const element = document.getElementById("editModel");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
     },
     async UpdateData() {
       try {
