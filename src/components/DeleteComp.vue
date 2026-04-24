@@ -1,6 +1,8 @@
 <template>
-  <div class="container">
-    <table>
+  <div class="card theme-card mt-3">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-hover align-middle theme-table mb-0">
       <thead>
         <tr>
           <th>Id</th>
@@ -18,11 +20,15 @@
           <td>{{ employee.designation }}</td>
           <td>{{ employee.department }}</td>
           <td>
-            <button @click="deleteData(employee)">Delete</button>
+            <button class="btn btn-danger btn-sm" @click="deleteData(employee)">
+              Delete
+            </button>
           </td>
         </tr>
       </tbody>
-    </table>
+        </table>
+      </div>
+    </div>
   </div>
 </template>
 

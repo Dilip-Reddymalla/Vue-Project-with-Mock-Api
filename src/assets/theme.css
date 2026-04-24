@@ -1,15 +1,20 @@
 :root {
-  --bg: #0b1020;
-  --surface: #121a30;
-  --surface-2: #1a2542;
-  --primary: #00d1ff;
+  /* --bg: #0b1020; */
+  --bg: #69a1eb;
+  /* --surface: #121a30; */
+  --surface: #000000;
+  /* --surface-2: #1a2542; */
+  --surface: #080f21;
+  /* --primary: #00d1ff; */
+  --primary: #6877fd;
+  /* --secondary: #ff6b6b; */
   --secondary: #ff6b6b;
   --accent: #ffd166;
   --success: #2ec4b6;
   --warning: #f4a261;
   --danger: #ef476f;
-  --text: #f8fafc;
-  --muted: #9fb0d0;
+  --text: #001e3b;
+  --muted: #030508;
   --radius: 14px;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
@@ -55,20 +60,21 @@ h6 {
 }
 
 p,
-label,
 span,
 li {
   color: var(--muted);
 }
+label {
+  color: white;
+}
 
-.container,
-.post,
-.result,
-.editModel {
+.theme-card,
+.info-card,
+.theme-card-sub {
   background: linear-gradient(
     160deg,
-    rgba(26, 37, 66, 0.95),
-    rgba(18, 26, 48, 0.96)
+    rgba(43, 78, 176, 0.95),
+    rgba(32, 61, 142, 0.96)
   );
   border: 1px solid rgba(0, 209, 255, 0.2);
   border-radius: var(--radius);
@@ -77,60 +83,50 @@ li {
   margin-top: 1.25rem;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  overflow: hidden;
+.theme-table {
   border-radius: 12px;
+  overflow: hidden;
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--text);
 }
 
-th,
-td {
+.theme-table th,
+.theme-table td {
   padding: 0.8rem 0.65rem;
   border-bottom: 1px solid rgba(159, 176, 208, 0.2);
   text-align: left;
 }
 
-th {
+.theme-table th {
   font-family: "Space Grotesk", "Segoe UI", sans-serif;
   color: var(--primary);
-  background: rgba(0, 209, 255, 0.08);
+  background: rgba(22, 152, 181, 0.486);
 }
 
-tbody tr:nth-child(even) {
-  background: rgba(255, 255, 255, 0.02);
+.theme-table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.139);
 }
 
-input,
-textarea,
-select {
-  width: min(420px, 100%);
-  margin-top: 0.35rem;
+.theme-input {
   padding: 0.65rem 0.75rem;
   border: 1px solid rgba(159, 176, 208, 0.35);
   border-radius: 10px;
-  background: rgba(12, 16, 34, 0.78);
-  color: var(--text);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-weight: bolder;
 }
-
-input:focus,
-textarea:focus,
-select:focus {
+.theme-input:focus {
   outline: none;
   border-color: var(--primary);
   box-shadow: 0 0 0 0.2rem rgba(0, 209, 255, 0.25);
 }
 
-.btn,
-button {
-  border: none;
-  border-radius: 10px;
-  padding: 0.6rem 1rem;
+.btn-theme {
   background: linear-gradient(
     135deg,
     var(--primary),
-    #5eead4 70%,
+    #cddb4d 70%,
     var(--accent)
   );
   color: #061325;
@@ -139,16 +135,40 @@ button {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.btn:hover,
-button:hover {
+.btn-theme:hover {
   transform: translateY(-1px);
   box-shadow: 0 10px 18px rgba(0, 209, 255, 0.2);
+  color: #061325;
 }
 
-.btn-danger,
-button[aria-label="Delete"] {
+.btn-danger {
   background: linear-gradient(135deg, var(--secondary), var(--danger));
   color: #fff;
+}
+
+.btn-danger:hover {
+  color: #fff;
+}
+
+.info-card .card-body {
+  padding: 1rem;
+}
+
+.info-card pre,
+.page-wrap pre {
+  margin: 0;
+  background: rgba(11, 16, 32, 0.9);
+  border: 1px solid rgba(159, 176, 208, 0.28);
+  border-radius: 10px;
+  padding: 0.9rem;
+  overflow-x: auto;
+}
+
+.info-card pre code,
+.page-wrap pre code {
+  color: #f8fafc;
+  font-size: 0.9rem;
+  font-family: "Fira Code", "Cascadia Code", Consolas, monospace;
 }
 
 .router-panel {
@@ -170,15 +190,14 @@ button[aria-label="Delete"] {
 }
 
 @media (max-width: 768px) {
-  .container,
-  .post,
-  .result,
-  .editModel {
+  .theme-card,
+  .info-card,
+  .theme-card-sub {
     padding: 1rem;
   }
 
-  th,
-  td {
+  .theme-table th,
+  .theme-table td {
     font-size: 0.9rem;
     padding: 0.6rem 0.45rem;
   }

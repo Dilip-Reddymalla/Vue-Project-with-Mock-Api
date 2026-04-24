@@ -17,7 +17,7 @@
       </button>
 
       <div id="mainNav" class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto align-items-md-center gap-md">
+        <ul class="navbar-nav ms-auto align-items-md-center gap-1">
           <li class="nav-item">
             <router-link class="nav-link" to="/">Home</router-link>
           </li>
@@ -58,10 +58,17 @@ export default {
   margin: 0 auto;
   border: 1px solid rgba(0, 209, 255, 0.24);
   border-radius: 14px;
-  background: rgba(15, 21, 41, 0.82);
+  background: rgba(48, 75, 162, 0.872);
   backdrop-filter: blur(8px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   padding: 0.7rem 1rem;
+  overflow: visible;
+}
+
+.navbar-collapse {
+  background: rgba(45, 110, 125, 0.24);
+  border-radius: 0 0 14px 14px;
+  margin-top: 0.5rem;
 }
 
 .brand-title {
@@ -85,10 +92,33 @@ export default {
   color: #00d1ff !important;
 }
 
+.navbar-toggler {
+  position: relative;
+  z-index: 15;
+  pointer-events: auto !important;
+  cursor: pointer;
+  border: none;
+  padding: 0.25rem 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+  outline: 1px solid rgba(0, 209, 255, 0.5);
+}
+
 @media (max-width: 767px) {
   .nav-link {
     margin-right: 0;
     padding: 0.55rem 0;
+  }
+
+  .navbar-toggler {
+    pointer-events: auto;
+    cursor: pointer;
+    z-index: 20;
   }
 }
 </style>

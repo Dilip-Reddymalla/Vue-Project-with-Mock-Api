@@ -1,53 +1,78 @@
 <template>
-  <div class="post">
-    Name:
-    <input type="text" placeholder="Enter Employee Name" v-model="posts.name" />
-    <br /><br />
-    salary:
-    <input
-      type="number"
-      placeholder="Enter Employee Salary"
-      v-model="posts.salary"
-    />
-    <br /><br />
-    designation:
-    <input
-      type="text"
-      placeholder="Enter Employee designation"
-      v-model="posts.designation"
-    />
-    <br /><br />
-    department:
-    <input
-      type="text"
-      placeholder="Enter Employee department"
-      v-model="posts.department"
-    />
-    <br /><br />
-    <button @click="postData">Post Data</button>
+  <div class="card theme-card mt-3">
+    <div class="card-body">
+      <h3 class="h5 mb-3">Add Employee</h3>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label" for="post-name">Name</label>
+          <input
+            id="post-name"
+            type="text"
+            class="form-control theme-input"
+            placeholder="Enter Employee Name"
+            v-model="posts.name"
+          />
+        </div>
+        <div class="col-md-6">
+          <label class="form-label" for="post-salary">Salary</label>
+          <input
+            id="post-salary"
+            type="number"
+            class="form-control theme-input"
+            placeholder="Enter Employee Salary"
+            v-model="posts.salary"
+          />
+        </div>
+        <div class="col-md-6">
+          <label class="form-label" for="post-designation">Designation</label>
+          <input
+            id="post-designation"
+            type="text"
+            class="form-control theme-input"
+            placeholder="Enter Employee Designation"
+            v-model="posts.designation"
+          />
+        </div>
+        <div class="col-md-6">
+          <label class="form-label" for="post-department">Department</label>
+          <input
+            id="post-department"
+            type="text"
+            class="form-control theme-input"
+            placeholder="Enter Employee Department"
+            v-model="posts.department"
+          />
+        </div>
+      </div>
+      <button class="btn btn-theme mt-3" @click="postData">Post Data</button>
+    </div>
   </div>
-  <div class="result" v-if="employees.length > 0">
-    <h3>Inserted Data</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Name</th>
-          <th>Salary</th>
-          <th>Designation</th>
-          <th>Department</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="employee in employees" :key="employee.id">
-          <td>{{ employee.id }}</td>
-          <td>{{ employee.name }}</td>
-          <td>{{ employee.salary }}</td>
-          <td>{{ employee.designation }}</td>
-          <td>{{ employee.department }}</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="card theme-card mt-3" v-if="employees.length > 0">
+    <div class="card-body">
+      <h3 class="h5 mb-3">Inserted Data</h3>
+      <div class="table-responsive">
+        <table class="table table-hover align-middle theme-table mb-0">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Salary</th>
+              <th>Designation</th>
+              <th>Department</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="employee in employees" :key="employee.id">
+              <td>{{ employee.id }}</td>
+              <td>{{ employee.name }}</td>
+              <td>{{ employee.salary }}</td>
+              <td>{{ employee.designation }}</td>
+              <td>{{ employee.department }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </template>
 

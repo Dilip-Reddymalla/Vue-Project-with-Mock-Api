@@ -1,6 +1,8 @@
 <template>
-  <div class="container">
-    <table>
+  <div class="card theme-card mt-3">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-hover align-middle theme-table mb-0">
       <thead>
         <tr>
           <th>Id</th>
@@ -19,9 +21,11 @@
           <td>{{ employee.department }}</td>
         </tr>
       </tbody>
-    </table>
+        </table>
+      </div>
+      <button class="btn btn-theme mt-3" @click="getData">Refresh</button>
+    </div>
   </div>
-  <button @click="getData">Refresh</button>
 </template>
 
 <script>
