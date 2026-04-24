@@ -1,21 +1,27 @@
 <template>
   <div class="container">
     <table>
-      <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Salary</th>
-        <th>Designation</th>
-        <th>Department</th>
-      </tr>
-      <tr v-for="employee in employees" :key="employee.id">
-        <td>{{ employee.id }}</td>
-        <td>{{ employee.name }}</td>
-        <td>{{ employee.salary }}</td>
-        <td>{{ employee.designation }}</td>
-        <td>{{ employee.department }}</td>
-        <button @click="editEmp(employee)">Edit</button>
-      </tr>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Salary</th>
+          <th>Designation</th>
+          <th>Department</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="employee in employees" :key="employee.id">
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.salary }}</td>
+          <td>{{ employee.designation }}</td>
+          <td>{{ employee.department }}</td>
+          <td>
+            <button @click="editEmp(employee)">Edit</button>
+          </td>
+        </tr>
+      </tbody>
     </table>
     <div class="editModel" v-if="newData.id">
       <H3>Edit the empoylee details </H3>
