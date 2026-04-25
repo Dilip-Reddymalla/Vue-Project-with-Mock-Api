@@ -99,9 +99,6 @@ export default {
   cursor: pointer;
   border: none;
   padding: 0.25rem 0.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .navbar-toggler:focus {
@@ -116,6 +113,9 @@ export default {
   }
 
   .navbar-toggler {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     pointer-events: auto;
     cursor: pointer;
     z-index: 20;
