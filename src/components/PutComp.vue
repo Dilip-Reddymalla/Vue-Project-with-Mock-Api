@@ -3,29 +3,30 @@
     <div class="card-body">
       <div class="table-responsive">
         <table class="table table-hover align-middle theme-table mb-0">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Name</th>
-          <th>Salary</th>
-          <th>Designation</th>
-          <th>Department</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="employee in employees" :key="employee.id">
-          <td>{{ employee.id }}</td>
-          <td>{{ employee.name }}</td>
-          <td>{{ employee.salary }}</td>
-          <td>{{ employee.designation }}</td>
-          <td>{{ employee.department }}</td>
-          <td>
-            <button class="btn btn-theme btn-sm" @click="editEmp(employee)">
-              Edit
-            </button>
-          </td>
-        </tr>
-      </tbody>
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Salary</th>
+              <th>Designation</th>
+              <th>Department</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="employee in employees" :key="employee.id">
+              <td>{{ employee.id }}</td>
+              <td>{{ employee.name }}</td>
+              <td>{{ employee.salary }}</td>
+              <td>{{ employee.designation }}</td>
+              <td>{{ employee.department }}</td>
+              <td>
+                <button class="btn btn-theme btn-sm" @click="editEmp(employee)">
+                  Edit
+                </button>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
 
@@ -54,7 +55,9 @@
               />
             </div>
             <div class="col-md-6">
-              <label class="form-label" for="edit-designation">Designation</label>
+              <label class="form-label" for="edit-designation"
+                >Designation</label
+              >
               <input
                 id="edit-designation"
                 type="text"
