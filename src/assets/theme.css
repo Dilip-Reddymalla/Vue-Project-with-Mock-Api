@@ -1,25 +1,17 @@
 :root {
-  /* --bg: #0b1020; */
-  --bg: #69a1eb;
-  /* --surface: #121a30; */
-  --surface: #000000;
-  /* --surface-2: #1a2542; */
-  --surface: #080f21;
-  /* --primary: #00d1ff; */
-  --primary: #6877fd;
-  /* --secondary: #ff6b6b; */
-  --secondary: #ff6b6b;
-  --accent: #ffd166;
-  --success: #2ec4b6;
-  --warning: #f4a261;
-  --danger: #ef476f;
-  --text: #001e3b;
-  --muted: #030508;
-  --radius: 14px;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --bg: #e9f5ff; /* mid-tone soft blue background */
+  --surface: #d7eaff; /* card surface slightly darker */
+  --primary: #4f6ef7; /* brand blue accent */
+  --secondary: #6c757d;
+  --accent: #4f6ef7; /* use primary as accent for coherence */
+  --success: #198754;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --text: #072447; /* deep navy text for readability */
+  --muted: #355b8a; /* muted blue-gray */
+  --radius: 8px;
+  --shadow: 0 6px 18px rgba(12, 40, 80, 0.08);
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Space+Grotesk:wght@600;700&display=swap");
 
 html,
 body,
@@ -29,24 +21,10 @@ body,
 
 body {
   margin: 0;
-  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
   color: var(--text);
-  background: radial-gradient(
-      circle at 15% 15%,
-      rgba(0, 209, 255, 0.22),
-      transparent 45%
-    ),
-    radial-gradient(
-      circle at 85% 20%,
-      rgba(255, 107, 107, 0.16),
-      transparent 40%
-    ),
-    radial-gradient(
-      circle at 75% 85%,
-      rgba(255, 209, 102, 0.2),
-      transparent 35%
-    ),
-    var(--bg);
+  background: linear-gradient(180deg, var(--bg) 0%, #dfefff 100%);
 }
 
 h1,
@@ -55,150 +33,115 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Space Grotesk", "Segoe UI", sans-serif;
   color: var(--text);
+  font-weight: 600;
+  margin: 0 0 0.5rem;
 }
 
 p,
 span,
-li {
-  color: var(--muted);
-}
+li,
 label {
-  color: white;
+  color: var(--text);
 }
 
 .theme-card,
 .info-card,
 .theme-card-sub {
-  background: linear-gradient(
-    160deg,
-    rgba(43, 78, 176, 0.95),
-    rgba(32, 61, 142, 0.96)
-  );
-  border: 1px solid rgba(0, 209, 255, 0.2);
+  background: var(--surface);
+  border: 1px solid rgba(79, 110, 247, 0.12);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 1.25rem;
-  margin-top: 1.25rem;
+  padding: 1rem;
+  margin-top: 1rem;
 }
 
 .theme-table {
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
   --bs-table-bg: transparent;
   --bs-table-color: var(--text);
 }
-
 .theme-table th,
 .theme-table td {
-  padding: 0.8rem 0.65rem;
-  border-bottom: 1px solid rgba(159, 176, 208, 0.2);
+  padding: 0.65rem;
+  border-bottom: 1px solid rgba(12, 40, 80, 0.06);
   text-align: left;
 }
-
 .theme-table th {
-  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  background: rgba(79, 110, 247, 0.06);
   color: var(--primary);
-  background: rgba(22, 152, 181, 0.486);
-}
-
-.theme-table tbody tr:nth-child(even) {
-  background: rgba(255, 255, 255, 0.139);
+  font-weight: 600;
 }
 
 .theme-input {
-  padding: 0.65rem 0.75rem;
-  border: 1px solid rgba(159, 176, 208, 0.35);
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  font-weight: bolder;
+  padding: 0.5rem;
+  border: 1px solid rgba(12, 40, 80, 0.08);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text);
+  transition: box-shadow 0.15s;
 }
+.theme-input::placeholder{color:rgba(12,40,80,0.35)}
 .theme-input:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 0.2rem rgba(0, 209, 255, 0.25);
+  box-shadow: 0 0 0 0.12rem rgba(79, 110, 247, 0.12);
 }
+
+.form-label{color:var(--text);font-weight:600}
 
 .btn-theme {
-  background: linear-gradient(
-    135deg,
-    var(--primary),
-    #cddb4d 70%,
-    var(--accent)
-  );
-  color: #061325;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  font-weight: 600;
 }
-
 .btn-theme:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 18px rgba(0, 209, 255, 0.2);
-  color: #061325;
+  background-color: #355be0;
 }
 
 .btn-danger {
-  background: linear-gradient(135deg, var(--secondary), var(--danger));
+  background-color: var(--danger);
   color: #fff;
-}
-
-.btn-danger:hover {
-  color: #fff;
-}
-
-.info-card .card-body {
-  padding: 1rem;
+  border: none;
+  border-radius: 6px;
+  padding: 0.45rem 0.7rem;
 }
 
 .info-card pre,
 .page-wrap pre {
   margin: 0;
-  background: rgba(11, 16, 32, 0.9);
-  border: 1px solid rgba(159, 176, 208, 0.28);
-  border-radius: 10px;
-  padding: 0.9rem;
-  overflow-x: auto;
+  background: #e1f0ff;
+  border: 1px solid rgba(79, 110, 247, 0.06);
+  border-radius: 6px;
+  padding: 0.75rem;
+  overflow: auto;
 }
-
 .info-card pre code,
 .page-wrap pre code {
-  color: #f8fafc;
+  color: var(--text);
+  font-family: monospace;
   font-size: 0.9rem;
-  font-family: "Fira Code", "Cascadia Code", Consolas, monospace;
 }
 
 .router-panel {
   max-width: 1024px;
   margin: 1.5rem auto;
   padding: 0 1rem 2rem;
-  animation: fadeUp 0.35s ease;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 @media (max-width: 768px) {
   .theme-card,
   .info-card,
   .theme-card-sub {
-    padding: 1rem;
+    padding: 0.75rem;
   }
-
   .theme-table th,
   .theme-table td {
-    font-size: 0.9rem;
-    padding: 0.6rem 0.45rem;
+    font-size: 0.95rem;
+    padding: 0.55rem;
   }
 }

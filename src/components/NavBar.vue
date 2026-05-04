@@ -56,17 +56,17 @@ export default {
 .custom-nav {
   max-width: 1100px;
   margin: 0 auto;
-  border: 1px solid rgba(0, 209, 255, 0.24);
+  border: 1px solid rgba(79,110,247,0.12);
   border-radius: 14px;
-  background: rgba(48, 75, 162, 0.872);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-  padding: 0.7rem 1rem;
+  background: rgba(215,234,255,0.9);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 12px rgba(12,40,80,0.06);
+  padding: 0.55rem 1rem;
   overflow: visible;
 }
 
 .navbar-collapse {
-  background: rgba(45, 110, 125, 0.24);
+  background: rgba(215,234,255,0.95);
   border-radius: 0 0 14px 14px;
   margin-top: 0.5rem;
 }
@@ -74,22 +74,22 @@ export default {
 .brand-title {
   font-weight: 700;
   letter-spacing: 0.03em;
-  color: #f8fafc !important;
+  color: var(--text) !important;
 }
 
 .nav-link {
-  color: #9fb0d0 !important;
+  color: var(--muted) !important;
   font-weight: 600;
   margin-right: 0.75rem;
   transition: color 0.2s ease;
 }
 
 .nav-link:hover {
-  color: #ffd166 !important;
+  color: var(--accent) !important;
 }
 
 .router-link-exact-active.nav-link {
-  color: #00d1ff !important;
+  color: var(--accent) !important;
 }
 
 .navbar-toggler {
@@ -103,7 +103,7 @@ export default {
 
 .navbar-toggler:focus {
   box-shadow: none;
-  outline: 1px solid rgba(0, 209, 255, 0.5);
+  outline: 1px solid rgba(79,110,247,0.35);
 }
 
 @media (max-width: 767px) {
